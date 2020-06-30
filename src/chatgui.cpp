@@ -6,6 +6,7 @@
 #include "chatlogic.h"
 #include "chatgui.h"
 
+
 // size of chatbot window
 const int width = 414;
 const int height = 736;
@@ -118,7 +119,7 @@ ChatBotPanelDialog::ChatBotPanelDialog(wxWindow *parent, wxWindowID id)
     ////
 
     // create chat logic instance
-    _chatLogic = std::unique_ptr<ChatLogic> (new ChatLogic());
+    _chatLogic = std::make_unique<ChatLogic>();
 
     // pass pointer to chatbot dialog so answers can be displayed in GUI
     _chatLogic->SetPanelDialogHandle(this);
